@@ -31,6 +31,19 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   zackmart:
+    +schema: L3_CONSUMPTION 
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+    customers_stg:
+      +schema: L2_PROCESSING
+    employees_stg:
+      +schema: L2_PROCESSING
+    orderitems_stg:
+      +schema: L2_PROCESSING
+    orders_stg:
+      +schema: L2_PROCESSING
+    customerrevenue:
+      +materialized: table
+
+    

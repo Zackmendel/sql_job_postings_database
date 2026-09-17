@@ -32,6 +32,7 @@ target/
 dbt_packages/
 dbt_modules/
 logs/
+dbt_internal_packages/
 
 # Environment variables & secrets
 .env
@@ -55,3 +56,6 @@ Thumbs.db
 .mypy_cache/
 .coverage
 htmlcov/
+
+
+oms_dbt_proj-main/
