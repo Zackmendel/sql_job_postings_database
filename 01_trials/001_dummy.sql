@@ -4,3 +4,5 @@ SELECT
     100.01 AS float, 
     true AS boolean, 
     CURRENT_TIMESTAMP AS datetime;
+
+    SHOW DATABASES;
