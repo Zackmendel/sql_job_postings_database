@@ -81,4 +81,50 @@ FROM read_csv("https://storage.googleapis.com/sql_de/skills_job_dim.csv",
         AUTO_DETECT=true);
 
 
--- Check the resulting tables
+-- Validation: Check the resulting tables
+SELECT
+    'Company Dim' AS table_name,
+    COUNT(*) AS record_count
+FROM company_dim
+UNION ALL
+SELECT
+    'Skills Dim' AS table_name,
+    COUNT(*) AS record_count
+FROM skills_dim
+UNION ALL
+SELECT
+    'Job Postings Fact' AS table_name,
+    COUNT(*) AS record_count
+FROM job_postings_fact
+UNION ALL 
+SELECT
+    'Skills Job Dim' AS table_name,
+    COUNT(*) AS record_count
+FROM skills_job_dim;
+
+
+-- Top 5 rows of inserted data
+SELECT '=== First 5 rows of company_dim Table ===' AS info;
+SELECT
+    *
+FROM company_dim
+LIMIT 5;
+
+SELECT '=== First 5 rows of skills_dim Table ===' AS info;
+SELECT
+    *
+FROM skills_dim
+LIMIT 5;
+
+SELECT '=== First 5 rows of job_postings_fact Table ===' AS info;
+SELECT
+    *
+FROM job_postings_fact
+LIMIT 5;
+
+SELECT '=== First 5 rows of skills_job_dim Table ===' AS info;
+SELECT
+    *
+FROM skills_job_dim
+LIMIT 5;
+
