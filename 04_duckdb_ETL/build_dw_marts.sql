@@ -1,5 +1,8 @@
 -- duckdb dw_marts.duckdb -c ".read build_dw_marts.sql"
 
+-- Run script on Motherduck
+-- duckdb md:dw_marts -c ".read build_dw_marts.sql"
+
 -- Step 1: Datawarehouse - Create star schema tables
 .read 01_create_tables.sql
 
@@ -17,4 +20,7 @@
 
 -- Step 6: Mart - Update priority mart
 .read 06_update_priority_mart.sql
+
+-- Step 7: Mart - Create company mart
+.read 07_create_company_mart.sql
 
